@@ -1,0 +1,6 @@
+{
+  "name": "Lethos Serviços Digitais",
+  "description": "Agência especializada em criação de sites institucionais, landing pages, lojas virtuais, aplicativos e soluções digitais sob medida.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

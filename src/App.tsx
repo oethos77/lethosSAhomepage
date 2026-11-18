@@ -1,0 +1,56 @@
+import { MotionConfig } from "motion/react";
+import { Navbar } from "@/src/components/Navbar";
+import { HeroSection } from "@/src/components/HeroSection";
+import { AboutSection } from "@/src/components/AboutSection";
+import { ServicesSection } from "@/src/components/ServicesSection";
+import { TestimonialsSection } from "@/src/components/TestimonialsSection";
+import { ContactSection } from "@/src/components/ContactSection";
+import { FloatingWhatsApp } from "@/src/components/FloatingWhatsApp";
+import { ProcessSection } from "@/src/components/ProcessSection";
+import { PricingSection } from "@/src/components/PricingSection";
+import { Footer } from "@/src/components/Footer";
+
+export default function App() {
+  return (
+    <MotionConfig reducedMotion="user">
+      <div className="min-h-screen bg-background text-foreground">
+        <a
+          href="#conteudo-principal"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground"
+        >
+          Pular para o conteúdo principal
+        </a>
+
+        <Navbar />
+
+        <main id="conteudo-principal">
+          {/* 1. Seção inicial impactante */}
+          <HeroSection />
+
+          {/* 2. Sobre / Quem sou */}
+          <AboutSection />
+
+          {/* 3. Serviços */}
+          <ServicesSection />
+
+          {/* 4. Depoimentos */}
+          <TestimonialsSection />
+
+          {/* 5. Formulário de contato */}
+          <ContactSection />
+
+          {/* 7. Processo de trabalho */}
+          <ProcessSection />
+
+          {/* 8. Preços / Planos */}
+          <PricingSection />
+        </main>
+
+        {/* 6. WhatsApp flutuante */}
+        <FloatingWhatsApp />
+
+        <Footer />
+      </div>
+    </MotionConfig>
+  );
+}

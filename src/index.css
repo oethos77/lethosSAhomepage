@@ -1,0 +1,245 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-heading: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-text: var(--primary-text);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-silver: var(--silver);
+  --color-silver-muted: var(--silver-muted);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-hover: var(--whatsapp-hover);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+
+  --color-success: var(--success);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-border-accent: var(--border-accent);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+:root,
+.dark {
+  --radius: 0.75rem;
+
+  /* Core Brand Palette: Preto Profundo (#08080C), Roxo Neon (#8B2EFF), Prata Metálico (#C0C0C8) */
+  --background: #08080C;
+  --foreground: #F5F5F8;
+
+  --surface: #0E0E15;
+  --surface-elevated: #14141E;
+
+  --card: #0E0E15;
+  --card-foreground: #F5F5F8;
+
+  --popover: #111119;
+  --popover-foreground: #F5F5F8;
+
+  --primary: #8B2EFF;
+  --primary-hover: #9C4BFF;
+  --primary-text: #BC85FF;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #161621;
+  --secondary-foreground: #C0C0C8;
+
+  --silver: #C0C0C8;
+  --silver-muted: #8E8E9B;
+
+  --muted: #14141E;
+  --muted-foreground: #A0A0AD;
+
+  --accent: #1B1B28;
+  --accent-foreground: #F5F5F8;
+
+  --destructive: #E5484D;
+  --destructive-foreground: #FFFFFF;
+
+  --whatsapp: #147D3F;
+  --whatsapp-hover: #19944B;
+  --whatsapp-foreground: #FFFFFF;
+
+  --success: #3DD68C;
+
+  --border: rgba(192, 192, 200, 0.14);
+  --border-strong: rgba(192, 192, 200, 0.28);
+  --border-accent: rgba(139, 46, 255, 0.48);
+  --input: rgba(192, 192, 200, 0.18);
+  --ring: #8B2EFF;
+
+  /* Semantic Gradients */
+  --gradient-hero: radial-gradient(
+    ellipse 78% 58% at 50% -10%,
+    rgba(139, 46, 255, 0.22) 0%,
+    rgba(139, 46, 255, 0.05) 48%,
+    transparent 74%
+  );
+  --gradient-section-subtle: radial-gradient(
+    ellipse 60% 45% at 50% 0%,
+    rgba(139, 46, 255, 0.09) 0%,
+    transparent 70%
+  );
+  --gradient-surface: linear-gradient(
+    180deg,
+    rgba(20, 20, 30, 0.92) 0%,
+    rgba(12, 12, 18, 0.96) 100%
+  );
+  --gradient-surface-accent: linear-gradient(
+    160deg,
+    rgba(139, 46, 255, 0.13) 0%,
+    rgba(14, 14, 21, 0.96) 52%,
+    rgba(10, 10, 15, 0.98) 100%
+  );
+  --gradient-silver: linear-gradient(
+    135deg,
+    #F5F5F8 0%,
+    #C0C0C8 55%,
+    #868694 100%
+  );
+  --gradient-accent: linear-gradient(
+    135deg,
+    #8B2EFF 0%,
+    #681AD8 100%
+  );
+  --gradient-scrim: linear-gradient(
+    180deg,
+    rgba(8, 8, 12, 0.08) 0%,
+    rgba(8, 8, 12, 0.42) 55%,
+    rgba(8, 8, 12, 0.92) 100%
+  );
+
+  /* Semantic Shadows */
+  --shadow-card: 0 1px 0 0 rgba(192, 192, 200, 0.07) inset, 0 18px 40px -24px rgba(0, 0, 0, 0.88);
+  --shadow-elevated: 0 1px 0 0 rgba(192, 192, 200, 0.14) inset, 0 26px 52px -22px rgba(0, 0, 0, 0.94);
+  --shadow-glow: 0 0 0 1px var(--border-accent), 0 14px 38px -12px rgba(139, 46, 255, 0.42);
+  --shadow-cta: 0 8px 24px -6px rgba(139, 46, 255, 0.48);
+  --shadow-floating: 0 14px 34px -8px rgba(0, 0, 0, 0.85), 0 0 24px -4px rgba(139, 46, 255, 0.32);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-border outline-ring/60;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@utility bg-hero-glow {
+  background-image: var(--gradient-hero);
+}
+
+@utility bg-section-glow {
+  background-image: var(--gradient-section-subtle);
+}
+
+@utility bg-surface-gradient {
+  background-image: var(--gradient-surface);
+}
+
+@utility bg-surface-accent-gradient {
+  background-image: var(--gradient-surface-accent);
+}
+
+@utility bg-accent-gradient {
+  background-image: var(--gradient-accent);
+}
+
+@utility bg-media-scrim {
+  background-image: var(--gradient-scrim);
+}
+
+@utility text-silver-gradient {
+  background-image: var(--gradient-silver);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+@utility shadow-elevated {
+  box-shadow: var(--shadow-elevated);
+}
+
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+@utility shadow-cta {
+  box-shadow: var(--shadow-cta);
+}
+
+@utility shadow-floating {
+  box-shadow: var(--shadow-floating);
+}
+
+@utility border-hairline {
+  border: 1px solid var(--border);
+}
+
+@utility border-hairline-strong {
+  border: 1px solid var(--border-strong);
+}
+
+@utility border-hairline-accent {
+  border: 1px solid var(--border-accent);
+}
